@@ -1,0 +1,15 @@
+# File Managed by Puppet
+
+<VirtualHost <%= @ip_addr %>:<%= @port %>>
+    ServerAdmin <%= @server_admin_email ||= 'webmaster@localhost' %>
+    DocumentRoot <%= @real_docroot %>
+<% if @server_name_value != false -%>
+    ServerName <%= @server_name_value %>
+<% end -%>
+
+    ErrorLog  <%= scope.lookupvar('apache::log_dir') %>/<%= @name %>-error_log
+    CustomLog <%= scope.lookupvar('apache::log_dir') %>/<%= @name %>-access_log common
+
+    # Direttive Apache custom
+
+</VirtualHost>
