@@ -1,0 +1,15 @@
+{
+  "LICENSE": "a300b604c66de62cf6e923cca89c9d83",
+  "Modulefile": "be52bfe7a94124fcfa77ef767c7a041a",
+  "README.md": "f2cabbbd429e74e8e4c0da6bd6cf0502",
+  "Rakefile": "e90d68823ff237c89224eb139f8926ad",
+  "manifests/init.pp": "d3182dd2f46ea29d43d7dc91bd730755",
+  "manifests/params.pp": "aaa065befbcbd53b51ea7ec5f4ebf764",
+  "manifests/spec.pp": "ccb79c5d83a329a66732c51d991f641d",
+  "metadata.json": "83e9dc7a1feaea92dc76f0f597bfd56d",
+  "spec/classes/ntp_spec.rb": "128a1c4a8e0658d696619573bb83637e",
+  "spec/spec_helper.rb": "0db89c9a486df193c0e40095422e19dc",
+  "templates/ntp.conf.erb": "1e3376f7dd291aee18dd6a84c348bc16",
+  "templates/ntpdate.erb": "0b8fdb9e91bdea0f985e23fdc5dedb1c",
+  "templates/spec.erb": "055d4f22a02a677753cf922108b6e50c"
+}
