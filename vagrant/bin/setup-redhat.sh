@@ -16,10 +16,10 @@ if [ "x$1" != "xoriginal" ] ; then
   fi
 fi
 
-rpm -qa | grep "^puppet${puppetsuffix}" >/dev/null 2>&1
-if [ "x$?" == "x1" ] ; then
+#rpm -qa | grep "^puppet${puppetsuffix}" >/dev/null 2>&1
+#if [ "x$?" == "x1" ] ; then
   yum install -y puppet$puppetsuffix >/dev/null 2>&1
-fi
+#fi
 
 rpm -qa | grep 'rubygems' >/dev/null 2>&1
 if [ "x$?" == "x1" ] ; then

@@ -7,7 +7,7 @@ filebucket { 'main':
   path   => false,
 }
 
-if $::virtual != 'virtualbox' {
+if $::virtual != "virtualbox" {
   $env = 'prod'
   File { backup => 'main' }
 } else {
