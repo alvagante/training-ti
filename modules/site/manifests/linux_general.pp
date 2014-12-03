@@ -1,7 +1,7 @@
-class site::general_linux {
+class site::linux_general {
 
 #  include resolver
-#  include ntp
+  include ntp
 #  include openssh
   include site::linux_tools
 

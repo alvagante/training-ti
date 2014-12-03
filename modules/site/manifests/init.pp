@@ -1,15 +1,15 @@
 class site {
 
   case $::kernel {
-    'Linux': { include ::site::general_linux }
-    'Windows': { include ::site::general_windows }
+    'Linux': { include ::site::linux_general }
+    'Windows': { include ::site::windows_general }
   }
 
   if $::role  {
     include "site::role::${::role}"
      case $::kernel {
-       'Linux': { Class['::site::general_linux'] -> Class["::site::role::${::role}"] }
-       'Windows': { Class['::site::general_windows'] -> Class["::site::role::${::role}"] }
+       'Linux': { Class['::site::linux_general'] -> Class["::site::role::${::role}"] }
+       'Windows': { Class['::site::windows_general'] -> Class["::site::role::${::role}"] }
      }
   }
 

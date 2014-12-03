@@ -1,0 +1,2 @@
+---
+apache::template: "site/apache/webserver_blog/httpd.conf.erb"
