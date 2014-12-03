@@ -1,0 +1,20 @@
+{
+  "CHANGELOG": "261f9e9b5818427e5796cfd2c881c0f3",
+  "CONTRIBUTORS": "39c722dbf05f5a6d45135449cebb68b3",
+  "Gemfile": "d83f92a5d91df406292be9a4a2434fab",
+  "LICENSE": "47bbee59c4c1cb14cc3667035a227be0",
+  "Modulefile": "c4d88a72898c7ce63bea9acefbe98419",
+  "README.md": "785158de61743abd81448eca02b6ddcb",
+  "Rakefile": "e3b5ba225ce876a187cca861d68044ad",
+  "files/spec.conf": "384a5806f20dd26c67c603598991fe7f",
+  "manifests/conf.pp": "5c25fe3118643ab75319a7cc3e18fb14",
+  "manifests/init.pp": "36689339008ade466954514f78b5c9f9",
+  "manifests/params.pp": "15a12e4f2346046d83203f4f4142a909",
+  "spec/classes/init_spec.rb": "febe2cab9124d3350b6746a006b07c6a",
+  "spec/spec_helper.rb": "0db89c9a486df193c0e40095422e19dc",
+  "spec/spec_helper_system.rb": "6b7370db3a67aa57147929aee1961243",
+  "spec/system/basic_spec.rb": "2474f7dee5154dfa252cf5f0d3a1ca7f",
+  "templates/default.init-debian": "74ce888e25260d1ee57a2d9089b4f889",
+  "templates/spec.conf": "cc222fe002365a992c9cd3c536e25611",
+  "tests/init.pp": "1e6cbec5be3903c20f323690dcf27842"
+}
