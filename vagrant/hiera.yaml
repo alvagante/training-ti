@@ -1,0 +1,12 @@
+---
+:backends:
+  - yaml
+
+:hierarchy:
+  - nodes/%{::clientcert}
+  - role/%{::role}
+  - common
+
+:yaml:
+  :datadir: '/vagrant/hiera'
+
