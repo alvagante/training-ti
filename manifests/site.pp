@@ -28,33 +28,6 @@ filebucket { 'main':
   path   => false,
 }
 
-if $::virtual != "virtualbox" {
-  $env = 'prod'
-  File { backup => 'main' }
-} else {
-  $env = 'devel'
-}
-
-case $::clientcert {
-  /^amazon/: {
-    $role = 'webserver_www'
-  }
-  /^web/: {
-    $role = 'webserver_www'
-  }
-  /^tomcat/: {
-    $role = 'tomcat_www'
-  }
-  /^lb/: {
-    $role = 'lb_www'
-  }
-  /^db/: {
-    $role = 'db'
-  }
-  default: {
-
-  }
-}
 
 include site
 
