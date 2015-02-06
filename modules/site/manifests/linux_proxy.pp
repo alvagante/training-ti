@@ -1,9 +1,9 @@
-class site::proxy (
-  $host     = '',
-  $port     = '8080',
-  $user     = '',
-  $password = '',
-) {
+class site::linux_proxy {
+
+  $host=$::site::proxy_host
+  $port=$::site::proxy_port
+  $user=$::site::proxy_username
+  $password=$::site::proxy_password
 
   if $user != '' and $password != '' {
     $userpass = "${user}:${password}@"

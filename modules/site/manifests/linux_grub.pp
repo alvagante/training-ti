@@ -12,7 +12,7 @@ class site::linux_grub (
     }
 
     exec { 'upgrade-grub':
-      refreshonly = true,
+      refreshonly => true,
     }
   }
 }

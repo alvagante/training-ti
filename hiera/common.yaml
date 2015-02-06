@@ -1,11 +1,10 @@
 ---
-# site::proxy::host: 'proxy.example42.com'
-
 ntp::server:
   - 0.amazon.pool.ntp.org
   - 1.amazon.pool.ntp.org
   - 3.amazon.pool.ntp.org
-# apache::template: "site/apache/httpd.conf.erb"
+
+site::linux_general::firewall_class: '::site::linux_firewall'
 
 site::linux_repo::yum_conf_template: 'site/default/yum/yum.conf.erb'
 site::linux_repo::yum_repos_d_source: "puppet:///modules/site/default/yum/repos/%{operatingsystem}/%{operatingsystemmajrelease}"
