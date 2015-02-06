@@ -5,4 +5,7 @@ class site::linux_general {
 #  include openssh
   include site::linux_tools
 
+  include site::linux_mail
+  include site::linux_upgrade
+
 }

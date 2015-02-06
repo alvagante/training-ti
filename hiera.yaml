@@ -5,6 +5,7 @@
 :hierarchy:
   - nodes/%{::clientcert}
   - role/%{::role}
+  - zone/%{::zone}
   - common
 
 :yaml:

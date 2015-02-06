@@ -1,4 +1,9 @@
-class site {
+class site (
+  $proxy_host     = '',
+  $proxy_port     = '8080',
+  $proxy_username = '',
+  $proxy_password = '',
+) {
 
   case $::kernel {
     'Linux': { include ::site::linux_general }

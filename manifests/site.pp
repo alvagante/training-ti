@@ -1,17 +1,19 @@
 ## site.pp ##
 
-# This file (/etc/puppetlabs/puppet/manifests/site.pp) is the main entry point
-# used when an agent connects to a master and asks for an updated configuration.
-#
-# Global objects like filebuckets and resource defaults should go in this file,
-# as should the default node definition. (The default node can be omitted
-# if you use the console and don't define any other nodes in site.pp. See
-# http://docs.puppetlabs.com/guides/language_guide.html#nodes for more on
-# node definitions.)
-
+# Resource defaults. TODO: Manage Windows case
 Package {
   allow_virtual => false,
 }
+
+Exec {
+  path => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin',
+}
+
+#File {
+#  owner => 'root',
+#  group => 'root',
+#  mode  => '0644',
+#}
 
 ## Active Configurations ##
 

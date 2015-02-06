@@ -4,3 +4,22 @@ ntp::server:
   - 1.amazon.pool.ntp.org
   - 3.amazon.pool.ntp.org
 # apache::template: "site/apache/httpd.conf.erb"
+
+site::linux_repo::yum_conf_template: 'site/default/yum/yum.conf.erb'
+site::linux_repo::yum_repos_d_source: "puppet:///modules/site/default/yum/repos/%{operatingsystem}/%{operatingsystemmajrelease}"
+
+site::linux_upgrade::upgrade_flag: false
+
+postfix::tp_template: 'site/default/postfix/main.cf.erb-%{operatingsystem}'
+postfix::tp_options_hash:
+  inet_interfaces: 'localhost'
+  relayhost: ''
+  mynetwork: '127.0.0.0/8'
+postfix::tp_settings_hash:
+  service_enable: false
+  service_ensure: false
+
+exim::tp_template: 'site/default/exim/exim.cf.erb'
+exim::tp_settings_hash:
+  service_enable: false
+  service_ensure: false
