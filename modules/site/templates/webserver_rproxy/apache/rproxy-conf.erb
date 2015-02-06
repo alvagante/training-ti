@@ -1,0 +1,28 @@
+# Managed by PUPPET
+#
+# CONTINOUS INTEGRATION SERVICES
+#
+<IfModule mod_proxy.c>
+#CustomLog logs/access_proxy.log combined
+#ErrorLog logs/error_proxy.log
+ProxyRequests Off
+Timeout 1200
+ProxyTimeout 1200
+<Proxy *>
+    Order deny,allow
+#    Deny from all
+    Allow from all
+</Proxy>
+LogLevel Info
+#LogLevel Debug
+
+ProxyPass               <%= scope.lookupvar('::site::role::webserver_rproxy::directory_app') %>        <%= scope.lookupvar('::site::role::webserver_rproxy::url_app') %>
+ProxyPassReverse        <%= scope.lookupvar('::site::role::webserver_rproxy::directory_app') %>        <%= scope.lookupvar('::site::role::webserver_rproxy::url_app') %>
+<Proxy <%= scope.lookupvar('::site::role::webserver_rproxy::url_app') %>*>
+  #AllowOverride None
+    Order deny,allow
+    Allow from all
+</Proxy>
+
+</IfModule>
+# End of proxy directives.

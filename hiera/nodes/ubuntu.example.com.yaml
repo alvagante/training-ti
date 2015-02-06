@@ -1,0 +1,4 @@
+---
+  site::role::webserver_rproxy::directory_app: '/jenkins'
+  site::role::webserver_rproxy::url_app: 'http://ec2-54-171-135-142.eu-west-1.compute.amazonaws.com:8080/'
+

@@ -1,4 +1,6 @@
-class site::linux_proxy {
+class site::linux_proxy (
+  $profile_proxy_template = 'site/default/linux_proxy/proxy.sh.erb',
+) {
 
   $host=$::site::proxy_host
   $port=$::site::proxy_port
@@ -11,21 +13,12 @@ class site::linux_proxy {
     $userpass = ''
   }
 
-  case $::kernel {
-    # Linux Proxy Setup
-    'Linux': {
-      file { '/etc/profile.d/proxy.sh':
-        ensure  => present,
-        mode    => '0755',
-        owner   => 'root',
-        group   => 'root',
-        content => template('site/proxy/proxy.sh.erb'),
-       }
-     }
-     # Windows Proxy Setup
-     'Windows': {
-     }
-     default: {}
+  file { '/etc/profile.d/proxy.sh':
+    ensure  => present,
+    mode    => '0755',
+    owner   => 'root',
+    group   => 'root',
+    content => template($profile_proxy_template),
   }
 
 }

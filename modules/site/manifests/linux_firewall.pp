@@ -1,7 +1,7 @@
 class site::linux_firewall (
   $enable          = true,
-  $header_template = 'site/default/firewall/01_header.erb',
-  $footer_template = 'site/default/firewall/99_footer.erb',
+  $header_template = 'site/default/linux_firewall/01_header.erb',
+  $footer_template = 'site/default/linux_firewall/99_footer.erb',
   $safe_ssh        = true,
 ) {
 

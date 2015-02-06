@@ -1,5 +1,5 @@
 class site::role::puppetmaster (
-  $firewall_template = 'site/default/firewall/50_puppetmaster.erb',
+  $firewall_template = 'site/default/linux_firewall/50_puppetmaster.erb',
   $firewall_source   = '0.0.0.0/0',
 ) {
   concat::fragment { 'iptables_puppetmaster':
