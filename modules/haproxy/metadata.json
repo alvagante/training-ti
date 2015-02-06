@@ -1,0 +1,15 @@
+{
+  "name": "example42/haproxy",
+  "version": "3.0.2",
+  "author": "Alessandro Franceschi",
+  "summary": "This module installs and manages haproxy",
+  "license": "Apache License, Version 2.0",
+  "source": "https://github.com/example42/puppet-haproxy",
+  "project_page": "http://www.example42.com",
+  "issues_url": "https://github.com/example42/puppet-haproxy/issues",
+  "description": "This module installs and manages haproxy. Based of stdmod/puppet-skeleton-standard 0.0.3.",
+  "dependencies": [
+    {"name":"puppetlabs/stdlib"},
+    {"name":"example42/stdmod"}
+  ]
+}

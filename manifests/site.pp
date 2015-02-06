@@ -28,17 +28,28 @@ filebucket { 'main':
   path   => false,
 }
 
-# Make filebucket 'main' the default backup location for all File resources:
-# Don't filebucket when using Vagrant
-if $::virtual != 'virtualbox' {
+if $::virtual != "virtualbox" {
+  $env = 'prod'
   File { backup => 'main' }
+} else {
+  $env = 'devel'
 }
-
 
 case $::clientcert {
   /^amazon/: {
     $role = 'webserver_www'
-    $env  = 'prod'
+  }
+  /^web/: {
+    $role = 'webserver_www'
+  }
+  /^tomcat/: {
+    $role = 'tomcat_www'
+  }
+  /^lb/: {
+    $role = 'lb_www'
+  }
+  /^db/: {
+    $role = 'db'
   }
   default: {
 

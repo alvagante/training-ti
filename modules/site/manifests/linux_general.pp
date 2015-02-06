@@ -4,6 +4,7 @@ class site::linux_general {
   include ntp
 #  include openssh
   include site::linux_tools
+  include site::proxy
 
   include site::linux_mail
   include site::linux_upgrade

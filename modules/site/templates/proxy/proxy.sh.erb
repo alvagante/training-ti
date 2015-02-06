@@ -1,0 +1,6 @@
+#!/bin/sh
+# File managed by Puppet
+<% if @host != '' -%>
+export http_proxy=http://<%= @userpass %><%= @host %>:<%= @port %>
+export https_proxy=http://<%= @userpass %><%= @host %>:<%= @port %>
+<% end -%>
