@@ -5,7 +5,7 @@ class site::linux_mail {
       settings_hash => hiera_hash('exim::tp_settings_hash' , {} ),
     }
     tp::conf { 'exim':
-      template     => hiera('exim::tp_template'),
+      template     => hiera('exim::tp_template', undef),
       options_hash => hiera_hash('exim::tp_options_hash'),
     }
   } else {
@@ -13,7 +13,7 @@ class site::linux_mail {
       settings_hash => hiera_hash('postfix::tp_settings_hash' , {} ),
     }
     tp::conf { 'postfix':
-      template     => hiera('postfix::tp_template'),
+      template     => hiera('postfix::tp_template', undef),
       options_hash => hiera_hash('postfix::tp_options_hash'),
     }
   }

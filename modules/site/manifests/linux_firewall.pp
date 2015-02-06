@@ -12,11 +12,22 @@ class site::linux_firewall (
     'Debian' => '/etc/iptables/rules.v4',
   }
 
-  $iptables_package = 'iptables'
+  $iptables_package = $::osfamily ? {
+    'RedHat' => 'iptables',
+    'Debian' => 'iptables-persistent',
+  }
 
   $iptables_service = $::osfamily ? {
     'RedHat' => 'iptables',
     'Debian' => 'iptables-persistent',
+  }
+  $iptables_service_status = $::osfamily ? {
+    'Debian' => false,
+    'RedHat' => true,
+  }
+  $iptables_service_status_cmd = $::osfamily ? {
+    'Debian' => '/bin/true',
+    'RedHat' => undef,
   }
 
   $ensure = $enable ? {
@@ -32,8 +43,10 @@ class site::linux_firewall (
     ensure => $ensure,
   }
   service { $iptables_service:
-    ensure => $service_ensure,
-    enable => $enable,
+    ensure    => $service_ensure,
+    enable    => $enable,
+    hasstatus => $iptables_service_status,
+    status    => $iptables_service_status_cmd,
   }
   concat { $iptables_file:
     ensure  => $ensure,
